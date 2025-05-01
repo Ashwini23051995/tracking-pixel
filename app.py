@@ -14,6 +14,10 @@ def get_location(ip):
     except:
         return "Unknown"
 
+@app.route('/')
+def home():
+    return 'Welcome to the tracking pixel service!'
+
 @app.route('/pixel.png')
 def tracking_pixel():
     ip = request.remote_addr
@@ -34,4 +38,3 @@ def tracking_pixel():
 
 if __name__ == '__main__':
     app.run(debug=True)
-   
